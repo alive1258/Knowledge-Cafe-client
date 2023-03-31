@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cards = (props) => {
-  const { img, name, data, time, title, parsonImg } = props.card;
+  const { img, name, date, time, title, parsonImg } = props.card;
   return (
     <div>
       <div >
@@ -9,15 +9,15 @@ const Cards = (props) => {
           <img className=" h-96 w-full" src={img} alt="" />
           <div className="flex justify-between">
             <div className="flex gap-4">
-              <p>sobi:</p>
+              <img className="h-12 w-12 rounded-full" src={parsonImg} alt="" />
               <div>
-                <p>Mr. Raju</p>
-                <p>Mar 14 (4 Days ago)</p>
+                <p>{name}</p>
+                <p>{date}</p>
               </div>
             </div>
-            <div>05 min read</div>
+            <div>{time} min read</div>
           </div>
-          <p>How to get your first job as a self-taught programmer</p>
+          <p>{title}</p>
           <p>Mark as read</p>
         </div>
       </div>
