@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,7 +7,12 @@ const Cards = (props) => {
   const handelMarkAsRead = props.handelMarkAsRead;
  
 
+  // const handelBookmark = (title) => {
 
+  //   console.log('title:',title);
+  //   // const product ={title}
+   
+  // };
 
   return (
     <div>
@@ -27,7 +32,7 @@ const Cards = (props) => {
               <FontAwesomeIcon
                 className="cursor-pointer "
                 icon={faBookmark}
-                // onClick={() => handelBookmark(props.card)}
+                onClick={() => handelBookmark()}
               />
             </div>
           </div>
@@ -42,12 +47,8 @@ const Cards = (props) => {
           </div>
         </div>
       </div>
-          <div className="border-b-2">
-            
-          </div>
-          
+      <div className="border-b-2"></div>
     </div>
-   
   );
 };
 

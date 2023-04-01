@@ -6,6 +6,7 @@ import SideBookmark from "../SideBookmark/SideBookmark";
 const Blogs = () => {
   const [cards, setCards] = useState([]);
   const [cardInfo, setCardInfo] = useState([]);
+  // const [titles, setTitles] = useState([]);
 
   useEffect(() => {
     fetch("fakeDB.json")
@@ -14,12 +15,16 @@ const Blogs = () => {
   }, []);
 
   const handelMarkAsRead = (card) => {
-  
     const newCardInfo = [...cardInfo, card];
-  
     setCardInfo(newCardInfo);
   };
 
+  const handelBookmark = (card) => {
+    console.log('title:',card);
+    const titleInfo = [...titleInfo, card];
+
+    setTitles(titleInfo);
+  };
 
   return (
     <div className="container grid lg:grid-cols-4  lg:gap-4 lg:px-10 py-10">
@@ -28,7 +33,7 @@ const Blogs = () => {
           <Cards
             card={card}
             key={card.id}
-            // handelBookmark={handelBookmark}
+            handelBookmark={handelBookmark}
             handelMarkAsRead={handelMarkAsRead}
           ></Cards>
         ))}
@@ -37,14 +42,14 @@ const Blogs = () => {
       <div className=" p-4 sm:mt-2">
         <div className=" ">
           <h2 className="lg:text-lg font-bold mb-4">
-          {/* Spent time on read : min */}
-           <SideBookmark cardInfo={cardInfo}></SideBookmark>
+            {/* Spent time on read : min */}
+            <SideBookmark cardInfo={cardInfo}></SideBookmark>
           </h2>
         </div>
 
         <h2 className="lg:text-lg font-bold">
           Bookmarked Blogs :
-          {/* {cardInfo.length} */}
+          {/* {titleInfo.length} */}
         </h2>
         <div className="mt-6 bg-slate-50 p-2 rounded-lg">
           {/* {cards.map((singleData) => (
