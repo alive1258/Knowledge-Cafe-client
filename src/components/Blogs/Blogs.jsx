@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 import SideBookmark from "../SideBookmark/SideBookmark";
 
+
 const Blogs = () => {
   const [cards, setCards] = useState([]);
   const [cardInfo, setCardInfo] = useState([]);
@@ -17,9 +18,7 @@ const Blogs = () => {
     setCardInfo(newCardInfo);
   };
 
-  const handelBookmark = () => {
-    toast("Wow so easy!");
-  };
+ 
 
   return (
     <div className="container grid lg:grid-cols-4  lg:gap-4 lg:px-10 py-10">
@@ -28,7 +27,7 @@ const Blogs = () => {
           <Cards
             card={card}
             key={card.id}
-            handelBookmark={handelBookmark}
+            // handelBookmark={handelBookmark}
             handelMarkAsRead={handelMarkAsRead}
           ></Cards>
         ))}
@@ -43,7 +42,7 @@ const Blogs = () => {
         </div>
 
         <h2 className="lg:text-lg font-bold">
-          Bookmarked Blogs :{props.title}
+          Bookmarked Blogs :
  
         </h2>
         <div className="mt-6 bg-slate-50 p-2 rounded-lg">
