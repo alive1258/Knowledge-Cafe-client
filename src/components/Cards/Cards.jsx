@@ -6,15 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 const Cards = (props) => {
   const { img, name, date, time, title, parsonImg } = props.card;
   const handelMarkAsRead = props.handelMarkAsRead;
+  const [titles, setTitles] = useState([]);
 
- 
-  const handelBookmark = (title) => {
-
-    console.log('title:',title);
-    toast("Wow so easy!");
-    // const product ={title}
-
-  };
 
   return (
     <div>
@@ -34,7 +27,7 @@ const Cards = (props) => {
               <FontAwesomeIcon
                 className="cursor-pointer "
                 icon={faBookmark}
-                onClick={() => handelBookmark(props.card)}
+                onClick={ handelBookmark}
               />
             </div>
           </div>

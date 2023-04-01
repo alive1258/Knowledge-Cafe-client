@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 import SideBookmark from "../SideBookmark/SideBookmark";
 
-
-
 const Blogs = () => {
   const [cards, setCards] = useState([]);
   const [cardInfo, setCardInfo] = useState([]);
-  // const [titles, setTitles] = useState([]);
 
   useEffect(() => {
     fetch("fakeDB.json")
@@ -19,11 +16,10 @@ const Blogs = () => {
     const newCardInfo = [...cardInfo, card];
     setCardInfo(newCardInfo);
   };
+
   const handelBookmark = () => {
-    console.log('askjdgf')
     toast("Wow so easy!");
   };
- 
 
   return (
     <div className="container grid lg:grid-cols-4  lg:gap-4 lg:px-10 py-10">
@@ -41,20 +37,17 @@ const Blogs = () => {
       <div className=" p-4 sm:mt-2">
         <div className=" ">
           <h2 className="lg:text-lg font-bold mb-4">
-            {/* Spent time on read : min */}
+       
             <SideBookmark cardInfo={cardInfo}></SideBookmark>
           </h2>
         </div>
 
         <h2 className="lg:text-lg font-bold">
-          Bookmarked Blogs :
-          {/* {titleInfo.length} */}
+          Bookmarked Blogs :{props.title}
+ 
         </h2>
         <div className="mt-6 bg-slate-50 p-2 rounded-lg">
-          {/* {cards.map((singleData) => (
-            <p>singleData.title </p>
-          ))} */}
-          {/* <p>sfsdfg:{cardInfo.title}</p> */}
+       
         </div>
       </div>
     </div>
