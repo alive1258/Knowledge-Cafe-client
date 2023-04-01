@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
 
 const Cards = (props) => {
   const { img, name, date, time, title, parsonImg } = props.card;
   const handelMarkAsRead = props.handelMarkAsRead;
+
  
+  const handelBookmark = (title) => {
 
-  // const handelBookmark = (title) => {
+    console.log('title:',title);
+    toast("Wow so easy!");
+    // const product ={title}
 
-  //   console.log('title:',title);
-  //   // const product ={title}
-   
-  // };
+  };
 
   return (
     <div>
@@ -32,7 +34,7 @@ const Cards = (props) => {
               <FontAwesomeIcon
                 className="cursor-pointer "
                 icon={faBookmark}
-                onClick={() => handelBookmark()}
+                onClick={() => handelBookmark(props.card)}
               />
             </div>
           </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 import SideBookmark from "../SideBookmark/SideBookmark";
-// import SideBookmark from "./../SideBookmark/SideBookmark";
+
+
 
 const Blogs = () => {
   const [cards, setCards] = useState([]);
@@ -18,13 +19,11 @@ const Blogs = () => {
     const newCardInfo = [...cardInfo, card];
     setCardInfo(newCardInfo);
   };
-
-  const handelBookmark = (card) => {
-    console.log('title:',card);
-    const titleInfo = [...titleInfo, card];
-
-    setTitles(titleInfo);
+  const handelBookmark = () => {
+    console.log('askjdgf')
+    toast("Wow so easy!");
   };
+ 
 
   return (
     <div className="container grid lg:grid-cols-4  lg:gap-4 lg:px-10 py-10">
