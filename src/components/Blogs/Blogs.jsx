@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
+import SideBookmark from "../SideBookmark/SideBookmark";
+// import SideBookmark from "./../SideBookmark/SideBookmark";
 
 const Blogs = () => {
   const [cards, setCards] = useState([]);
@@ -12,9 +14,12 @@ const Blogs = () => {
   }, []);
 
   const handelMarkAsRead = (card) => {
+  
     const newCardInfo = [...cardInfo, card];
+  
     setCardInfo(newCardInfo);
   };
+
 
   return (
     <div className="container grid lg:grid-cols-4  lg:gap-4 lg:px-10 py-10">
@@ -23,24 +28,29 @@ const Blogs = () => {
           <Cards
             card={card}
             key={card.id}
+            // handelBookmark={handelBookmark}
             handelMarkAsRead={handelMarkAsRead}
           ></Cards>
         ))}
       </div>
 
       <div className=" p-4 sm:mt-2">
-        <div className="">
+        <div className=" ">
           <h2 className="lg:text-lg font-bold mb-4">
-            Spent time on read : 177 min
+          {/* Spent time on read : min */}
+           <SideBookmark cardInfo={cardInfo}></SideBookmark>
           </h2>
         </div>
-        <div className=" ">
-          <h2 className="lg:text-lg font-bold">
-            Bookmarked Blogs : {cardInfo.length}
-          </h2>
-          <div className="mt-6 bg-slate-50 p-2 rounded-lg">
-            <p>Master Microsoft Power Platform and Become an In-Demand!</p>
-          </div>
+
+        <h2 className="lg:text-lg font-bold">
+          Bookmarked Blogs :
+          {/* {cardInfo.length} */}
+        </h2>
+        <div className="mt-6 bg-slate-50 p-2 rounded-lg">
+          {/* {cards.map((singleData) => (
+            <p>singleData.title </p>
+          ))} */}
+          {/* <p>sfsdfg:{cardInfo.title}</p> */}
         </div>
       </div>
     </div>
